@@ -20,10 +20,9 @@ graph TD;
     B --> C{Google Cloud Storage};
     C --> D[BigQuery: Raw Tables];
     D --> E{dbt Core};
-    E --> F[BigQuery: Transformed Tables - Staging & Final Models];
+    E --> F[BigQuery: Transformed Tables];
 
-
-    ✨ Key Features
+Key Features
 
     Extraction & Loading: A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables.
 
@@ -37,7 +36,9 @@ graph TD;
 
     Automation-Ready: Includes a complete Airflow DAG (ecommerce_elt_dag.py) ready for deployment to an orchestrator like Cloud Composer, which automates the entire ELT process on a daily schedule.
 
-🛠️ Tech Stack
+
+
+Tech Stack
 
     Cloud Provider: Google Cloud Platform (GCP)
 
@@ -49,7 +50,8 @@ graph TD;
 
     Orchestration: Apache Airflow (DAG provided)
 
-🚀 How to Run Locally
+
+How to Run Locally
 Prerequisites
 
     Python 3.9+
@@ -61,60 +63,30 @@ Prerequisites
     The dbt CLI installed.
 
 1. Clone the Repository
-code Bash
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
-    
 git clone <your-repo-url>
-cd ecommerce_analytics_pipeline
-
-  
+cd ecommerce-analytics-pipeline
 
 2. Set Up the Environment
 
 Create and activate a virtual environment:
-code Bash
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
-    
 python -m venv venv
 .\venv\Scripts\activate
 
-  
-
-Install the required packages:
-code Bash
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
+3. Install the required packages:
     
 pip install -r requirements.txt
 
-  
-
-3. Configure Your Credentials
-
+    
+4. Configure Your Credentials
 Create a .env file in the root of the project and populate it with your GCP details:
-code Env
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
     
 # .env.example
 GCP_PROJECT_ID="your-gcp-project-id"
 GCS_BUCKET_NAME="your-gcs-bucket-name"
 BIGQUERY_DATASET_ID="ecommerce_analytics"
 
-  
+5. Configure your profiles.yml file for dbt located at ~/.dbt/profiles.yml:
 
-Also, configure your profiles.yml file for dbt located at ~/.dbt/profiles.yml:
-code Yaml
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
-    
 ecommerce_transforms:
   target: dev
   outputs:
@@ -126,41 +98,21 @@ ecommerce_transforms:
       threads: 1
       location: EU # Or your GCP location
 
-  
-
-4. Run the Pipeline Manually
-
+6. Run the Pipeline Manually
 Execute the scripts in order from the project root directory.
 
-Step A: Load the raw data into BigQuery
-code Bash
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
+Step A: Load the raw data into BigQuery: 
     
 python airflow/plugins/src/upload_ecommerce_to_gcp.py
 
-  
-
-Step B: Run the dbt transformations
-code Bash
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
+Step B: Run the dbt transformations:
     
 dbt run --project-dir airflow/plugins/ecommerce_transforms
 
-  
-
 Step C (Optional): Run the dbt tests
-code Bash
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-
     
 dbt test --project-dir airflow/plugins/ecommerce_transforms
 
-  
 
 🔮 Future Work
 
