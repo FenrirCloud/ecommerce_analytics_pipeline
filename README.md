@@ -1,55 +1,60 @@
-# End-to-End E-commerce Analytics Pipeline
+    
+<div align="center">
+  <h1>End-to-End E-commerce Analytics Pipeline</h1>
+  <p>
+    An end-to-end ELT pipeline for the Olist E-commerce dataset using Python, Google Cloud (GCS, BigQuery), dbt, and Apache Airflow for orchestration.
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Python-3.11-blue.svg" alt="Python Version">
+    <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud">
+    <img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white" alt="BigQuery">
+    <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt">
+    <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white" alt="Airflow">
+  </p>
+</div>
 
-![Python](https://img.shields.io/badge/python-3.11-blue.svg)
-![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![BigQuery](https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white)
-![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
-![Airflow](https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white)
+<hr>
 
-This project demonstrates a complete, professional ELT (Extract, Load, Transform) pipeline built to analyze the Brazilian E-commerce Public Dataset by Olist. The pipeline ingests raw CSV data, loads it into a cloud data warehouse (Google BigQuery), and transforms it into clean, analysis-ready tables using dbt.
-
----
-
-## 🏛️ Project Architecture
-
-The pipeline follows a modern data stack architecture, separating the Extract/Load and Transform stages.
+### 🏛️ Project Architecture
+The pipeline follows a modern data stack architecture, separating the Extract, Load, and Transform stages. This diagram illustrates the flow of data from local files to transformed, analysis-ready tables in the cloud.
 
 ```mermaid
 graph TD;
-    A[Raw CSV Files on Local Machine] --> B(Python Script: upload_ecommerce_to_gcp.py);
-    B --> C{Google Cloud Storage};
-    C --> D[BigQuery: Raw Tables];
-    D --> E{dbt Core};
-    E --> F[BigQuery: Transformed Tables - Staging & Final Models];
+    A["Raw CSV Files<br>(Local Machine)"] --> B("Python Script<br>upload_ecommerce_to_gcp.py");
+    B --> C{"Google Cloud Storage<br>(Landing Zone)"};
+    C --> D["BigQuery<br>(Raw Tables)"];
+    D --> E("dbt Core<br>(Transformation Engine)");
+    E --> F["BigQuery<br>(Transformed Models)"];
+```
+  
 
+<hr>
+✨ Key Features
 
-    ✨ Key Features
+    🚚 Extraction & Loading: A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables.
 
-    Extraction & Loading: A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables.
+    🔄 Data Transformation: A comprehensive dbt project transforms the raw data into a clean, modular, and well-documented data model.
 
-    Data Transformation: The dbt project transforms the raw data into a clean, modular, and well-documented data model.
+    ✅ Data Quality: The dbt project includes data tests to ensure data integrity and reliability (e.g., not_null, unique, accepted_values).
 
-        Staging Models: Cleans, casts, and renames columns from the raw sources.
+    ✈️ Automation-Ready: Includes a complete Airflow DAG (ecommerce_elt_dag.py) ready for deployment to an orchestrator like Cloud Composer.
 
-        Final Model (dim_customers): Creates an advanced analytical model with one row per customer, calculating valuable KPIs like first_order_date, number_of_orders, and lifetime_value.
-
-    Data Quality: Includes dbt tests to ensure data integrity (e.g., not_null, unique, accepted_values).
-
-    Automation-Ready: Includes a complete Airflow DAG (ecommerce_elt_dag.py) ready for deployment to an orchestrator like Cloud Composer, which automates the entire ELT process on a daily schedule.
-
-🛠️ Tech Stack
-
-    Cloud Provider: Google Cloud Platform (GCP)
-
-    Data Warehouse: Google BigQuery
-
-    Data Ingestion: Python, google-cloud-storage, google-cloud-bigquery
-
-    Data Transformation: dbt (data build tool)
-
-    Orchestration: Apache Airflow (DAG provided)
-
-🚀 How to Run Locally
+<br>
+<details>
+<summary>
+<h3>🛠️ View Tech Stack</h3>
+</summary>
+Category	Technology
+Cloud Provider	<img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud">
+Data Warehouse	<img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white" alt="BigQuery">
+Ingestion	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Google_Cloud_Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCS">
+Transformation	<img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt">
+Orchestration	<img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white" alt="Airflow">
+</details>
+<details>
+<summary>
+<h3>🚀 How to Run Locally</h3>
+</summary>
 Prerequisites
 
     Python 3.9+
@@ -67,7 +72,7 @@ IGNORE_WHEN_COPYING_END
 
     
 git clone <your-repo-url>
-cd ecommerce_analytics_pipeline
+cd ecommerce-analytics-pipeline
 
   
 
@@ -162,7 +167,11 @@ dbt test --project-dir airflow/plugins/ecommerce_transforms
 
   
 
-🔮 Future Work
+</details>
+<details>
+<summary>
+<h3>🔮 Future Work</h3>
+</summary>
 
     Deploy Orchestration: The final step for this project is to deploy the included Airflow DAG to a managed service like Cloud Composer to achieve full daily automation.
 
