@@ -1,0 +1,18 @@
+# Environment variables - NEVER commit secrets!
+.env
+
+# Python virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Local data files (should be downloaded by the user)
+data_ecommerce/
+all_matches.jsonl
+
+# dbt generated folders
+dbt_packages/
+logs/
+target/
