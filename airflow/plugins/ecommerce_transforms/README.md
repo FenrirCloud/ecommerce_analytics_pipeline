@@ -1,3 +1,4 @@
+    
 <div align="center">
   <h1>End-to-End E-commerce Analytics Pipeline</h1>
   <p>
@@ -12,46 +13,48 @@
   </p>
 </div>
 
----
+<hr>
 
 ### 🏛️ Project Architecture
 The pipeline follows a modern data stack architecture, separating the Extract, Load, and Transform stages. This diagram illustrates the flow of data from local files to transformed, analysis-ready tables in the cloud.
 
 ```mermaid
 graph TD;
-    A[<br><b>Raw CSV Files</b><br><i>(Local Machine)</i>] --> B(<b>Python Script</b><br>upload_ecommerce_to_gcp.py);
-    B --> C{<br><b>Google Cloud Storage</b><br><i>(Landing Zone)</i>};
-    C --> D[<br><b>BigQuery</b><br><i>(Raw Tables)</i>];
-    D --> E(<b>dbt Core</b><br><i>Transformation Engine</i>);
-    E --> F[<br><b>BigQuery</b><br><i>(Transformed Models)</i>];
+    A["Raw CSV Files<br>(Local Machine)"] --> B("Python Script<br>upload_ecommerce_to_gcp.py");
+    B --> C{"Google Cloud Storage<br>(Landing Zone)"};
+    C --> D["BigQuery<br>(Raw Tables)"];
+    D --> E("dbt Core<br>(Transformation Engine)");
+    E --> F["BigQuery<br>(Transformed Models)"];
+```
+  
 
-
+<hr>
 ✨ Key Features
 
-    🚚 Extraction & Loading: A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables. The script is designed to be idempotent and handle multiple file types automatically.
+    🚚 Extraction & Loading: A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables.
 
     🔄 Data Transformation: A comprehensive dbt project transforms the raw data into a clean, modular, and well-documented data model.
 
-        Staging Models: Cleans, casts data types, and renames columns from the raw sources for clarity and consistency.
-
-        Final Model (dim_customers): Creates an advanced analytical model with one row per customer, calculating valuable KPIs like first_order_date, number_of_orders, and lifetime_value.
-
     ✅ Data Quality: The dbt project includes data tests to ensure data integrity and reliability (e.g., not_null, unique, accepted_values).
 
-    ✈️ Automation-Ready: Includes a complete Airflow DAG (ecommerce_elt_dag.py) ready for deployment to an orchestrator like Cloud Composer. The DAG is designed for daily scheduled runs and manages the entire ELT process automatically.
+    ✈️ Automation-Ready: Includes a complete Airflow DAG (ecommerce_elt_dag.py) ready for deployment to an orchestrator like Cloud Composer.
 
-
-🛠️ Tech Stack
+<br>
+<details>
+<summary>
+<h3>🛠️ View Tech Stack</h3>
+</summary>
 Category	Technology
 Cloud Provider	<img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud">
 Data Warehouse	<img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white" alt="BigQuery">
 Ingestion	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Google_Cloud_Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCS">
 Transformation	<img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt">
 Orchestration	<img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white" alt="Airflow">
-
-
-
-🚀 How to Run Locally
+</details>
+<details>
+<summary>
+<h3>🚀 How to Run Locally</h3>
+</summary>
 Prerequisites
 
     Python 3.9+
@@ -164,10 +167,14 @@ dbt test --project-dir airflow/plugins/ecommerce_transforms
 
   
 
-🔮 Future Work
+</details>
+<details>
+<summary>
+<h3>🔮 Future Work</h3>
+</summary>
 
     Deploy Orchestration: The final step for this project is to deploy the included Airflow DAG to a managed service like Cloud Composer to achieve full daily automation.
 
     Data Visualization: Connect a BI tool like Looker Studio, Tableau, or Superset to the final dim_customers table in BigQuery to build an interactive analytics dashboard.
-    
+
     Machine Learning: Use the clean customer data to build predictive models, such as predicting customer churn or forecasting lifetime value.
