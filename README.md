@@ -25,31 +25,56 @@ graph TD;
     C --> D["BigQuery<br>(Raw Tables)"];
     D --> E("dbt Core<br>(Transformation Engine)");
     E --> F["BigQuery<br>(Transformed Models)"];
-```
+
   
 
 <hr>
-✨ Key Features
-
-    🚚 Extraction & Loading: A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables.
-
-    🔄 Data Transformation: A comprehensive dbt project transforms the raw data into a clean, modular, and well-documented data model.
-
-    ✅ Data Quality: The dbt project includes data tests to ensure data integrity and reliability (e.g., not_null, unique, accepted_values).
-
-    ✈️ Automation-Ready: Includes a complete Airflow DAG (ecommerce_elt_dag.py) ready for deployment to an orchestrator like Cloud Composer.
-
 <br>
+<details>
+<summary>
+<h3>✨ View Key Features</h3>
+</summary>
+
+This project includes all the key components of a modern data pipeline:
+<ul>
+<li><strong>🚚 Extraction & Loading:</strong> A robust Python script handles the upload of multiple raw CSV files to Google Cloud Storage and then loads them into raw BigQuery tables.</li>
+<li><strong>🔄 Data Transformation:</strong> A comprehensive dbt project transforms the raw data into a clean, modular, and well-documented data model.</li>
+<li><strong>✅ Data Quality:</strong> The dbt project includes data tests to ensure data integrity and reliability (e.g., <code>not_null</code>, <code>unique</code>, <code>accepted_values</code>).</li>
+<li><strong>✈️ Automation-Ready:</strong> Includes a complete Airflow DAG (<code>ecommerce_elt_dag.py</code>) ready for deployment to an orchestrator like Cloud Composer.</li>
+</ul>
+</details>
 <details>
 <summary>
 <h3>🛠️ View Tech Stack</h3>
 </summary>
-Category	Technology
-Cloud Provider	<img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud">
-Data Warehouse	<img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white" alt="BigQuery">
-Ingestion	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Google_Cloud_Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCS">
-Transformation	<img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt">
-Orchestration	<img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white" alt="Airflow">
+<!-- Using an HTML table for guaranteed rendering -->
+<table>
+<tbody>
+<tr>
+<td width="150px"><strong>Cloud Provider</strong></td>
+<td><img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud"></td>
+</tr>
+<tr>
+<td><strong>Data Warehouse</strong></td>
+<td><img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=google-bigquery&logoColor=white" alt="BigQuery"></td>
+</tr>
+<tr>
+<td><strong>Ingestion</strong></td>
+<td>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Google_Cloud_Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCS">
+</td>
+</tr>
+<tr>
+<td><strong>Transformation</strong></td>
+<td><img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt"></td>
+</tr>
+<tr>
+<td><strong>Orchestration</strong></td>
+<td><img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache-Airflow&logoColor=white" alt="Airflow"></td>
+</tr>
+</tbody>
+</table>
 </details>
 <details>
 <summary>
@@ -178,3 +203,6 @@ dbt test --project-dir airflow/plugins/ecommerce_transforms
     Data Visualization: Connect a BI tool like Looker Studio, Tableau, or Superset to the final dim_customers table in BigQuery to build an interactive analytics dashboard.
 
     Machine Learning: Use the clean customer data to build predictive models, such as predicting customer churn or forecasting lifetime value.
+
+</details>
+```
