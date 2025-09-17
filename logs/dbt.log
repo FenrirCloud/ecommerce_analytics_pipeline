@@ -1,0 +1,89 @@
+[0m10:15:18.550439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D68D993550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6904C7A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6904C5210>]}
+
+
+============================== 10:15:18.566438 | 6951ae31-8fc7-4242-a4f4-694fe84ab589 ==============================
+[0m10:15:18.566438 [info ] [MainThread]: Running with dbt=1.6.0
+[0m10:15:18.567438 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': 'C:\\Users\\raad\\.dbt', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt init ecommerce_transforms', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])'}
+[0m10:15:18.568438 [debug] [MainThread]: Starter project path: D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\include\starter_project
+[0m10:15:18.647439 [info ] [MainThread]: 
+Your new dbt project "ecommerce_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:15:18.648439 [info ] [MainThread]: Setting up your profile.
+[0m10:19:01.264688 [error] [MainThread]: Encountered an error:
+
+[0m10:19:01.267689 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\cli\requires.py", line 87, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\cli\requires.py", line 72, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\cli\main.py", line 467, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\task\init.py", line 308, in run
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\task\init.py", line 116, in generate_target_from_input
+    target = self.generate_target_from_input(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\click\termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m10:19:01.269688 [debug] [MainThread]: Command `dbt init` failed at 10:19:01.269688 after 222.75 seconds
+[0m10:19:01.270689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6904D96D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6904D9F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6904D8FD0>]}
+[0m10:19:01.271689 [debug] [MainThread]: Flushing usage events
+[0m10:19:06.749803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023149ECA850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023149A3A010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023149F09050>]}
+
+
+============================== 10:19:06.753802 | 638377fe-1bc3-4c81-afa5-e84de1f9f36a ==============================
+[0m10:19:06.753802 [info ] [MainThread]: Running with dbt=1.6.0
+[0m10:19:06.754802 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'invocation_command': 'dbt init ecommerce_transforms', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\raad\\.dbt', 'static_parser': 'True', 'write_json': 'True'}
+[0m10:19:06.756804 [info ] [MainThread]: A project called ecommerce_transforms already exists here.
+[0m10:19:06.757802 [debug] [MainThread]: Command `dbt init` succeeded at 10:19:06.757802 after 0.02 seconds
+[0m10:19:06.758803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023149513BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023149AD3850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023144212950>]}
+[0m10:19:06.758803 [debug] [MainThread]: Flushing usage events
+[0m10:21:03.111031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163C3623A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163C2DADD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163C29A1F90>]}
+
+
+============================== 10:21:03.115033 | 192aa023-5f06-4d0d-a60d-d34f1b332c15 ==============================
+[0m10:21:03.115033 [info ] [MainThread]: Running with dbt=1.6.0
+[0m10:21:03.116030 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': 'C:\\Users\\raad\\.dbt', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt init ecommerce_transforms', 'log_format': 'default', 'use_colors': 'True', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'printer_width': '80', 'log_path': 'logs', 'indirect_selection': 'eager', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])'}
+[0m10:21:03.118035 [info ] [MainThread]: A project called ecommerce_transforms already exists here.
+[0m10:21:03.119031 [debug] [MainThread]: Command `dbt init` succeeded at 10:21:03.119031 after 0.02 seconds
+[0m10:21:03.120033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163C28EA610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163BCEE9810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163C2E5A2D0>]}
+[0m10:21:03.120033 [debug] [MainThread]: Flushing usage events
+[0m10:21:34.400337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192923A8C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192927D4C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001929232F650>]}
+
+
+============================== 10:21:34.405337 | 7c2b5884-38fb-4d70-aaf7-8bc8c00f24c7 ==============================
+[0m10:21:34.405337 [info ] [MainThread]: Running with dbt=1.6.0
+[0m10:21:34.406336 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt init ecommerce_transforms', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'printer_width': '80', 'quiet': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\raad\\.dbt', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True'}
+[0m10:21:34.407337 [info ] [MainThread]: A project called ecommerce_transforms already exists here.
+[0m10:21:34.408338 [debug] [MainThread]: Command `dbt init` succeeded at 10:21:34.408338 after 0.02 seconds
+[0m10:21:34.409336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019292CDA290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000192923BE690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001929239FF50>]}
+[0m10:21:34.409336 [debug] [MainThread]: Flushing usage events

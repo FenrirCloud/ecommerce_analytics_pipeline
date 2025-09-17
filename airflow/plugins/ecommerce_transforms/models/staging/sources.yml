@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: raw_ecommerce
+    schema: ecommerce_analytics
+    tables:
+      - name: olist_customers_dataset
+      - name: olist_orders_dataset
+      - name: olist_order_payments_dataset 

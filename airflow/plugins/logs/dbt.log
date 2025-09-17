@@ -1,0 +1,44 @@
+[0m10:22:15.828824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF1F721C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF1F71B890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF1EC20150>]}
+
+
+============================== 10:22:15.833827 | 1ab99ecc-35c6-499c-84c2-480fc08c53ae ==============================
+[0m10:22:15.833827 [info ] [MainThread]: Running with dbt=1.6.0
+[0m10:22:15.834823 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt init ecommerce_transforms', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'printer_width': '80', 'quiet': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'profiles_dir': 'C:\\Users\\raad\\.dbt'}
+[0m10:22:15.836823 [debug] [MainThread]: Starter project path: D:\ecommerce_analytics_pipeline\venv\Lib\site-packages\dbt\include\starter_project
+[0m10:22:15.858825 [info ] [MainThread]: 
+Your new dbt project "ecommerce_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:22:15.860827 [info ] [MainThread]: Setting up your profile.
+[0m10:22:59.102538 [info ] [MainThread]: Profile ecommerce_transforms written to C:\Users\raad\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m10:22:59.104539 [debug] [MainThread]: Command `dbt init` succeeded at 10:22:59.103538 after 43.29 seconds
+[0m10:22:59.104539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF1F1C2110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF1F721D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF1F732250>]}
+[0m10:22:59.105539 [debug] [MainThread]: Flushing usage events
+[0m10:23:10.643471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002498D7D0310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002498D793D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002498D84FF90>]}
+
+
+============================== 10:23:10.648471 | c5077762-57d1-4d96-a52b-5408c8052029 ==============================
+[0m10:23:10.648471 [info ] [MainThread]: Running with dbt=1.6.0
+[0m10:23:10.649470 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'profiles_dir': 'C:\\Users\\raad\\.dbt', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt debug', 'log_format': 'default', 'version_check': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])'}
+[0m10:23:10.649470 [info ] [MainThread]: dbt version: 1.6.0
+[0m10:23:10.650471 [info ] [MainThread]: python version: 3.11.9
+[0m10:23:10.651471 [info ] [MainThread]: python path: D:\ecommerce_analytics_pipeline\venv\Scripts\python.exe
+[0m10:23:10.652471 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m10:23:10.664470 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'BIGQUERY_DATASET_ID'
+[0m10:23:10.665471 [debug] [MainThread]: Command `dbt debug` failed at 10:23:10.665471 after 0.04 seconds
+[0m10:23:10.666472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002498E0313D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002498D318F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002498D84FCD0>]}
+[0m10:23:10.666472 [debug] [MainThread]: Flushing usage events
