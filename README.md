@@ -25,7 +25,7 @@ graph TD;
     C --> D["BigQuery<br>(Raw Tables)"];
     D --> E("dbt Core<br>(Transformation Engine)");
     E --> F["BigQuery<br>(Transformed Models)"];
-
+```
   
 
 <hr>
